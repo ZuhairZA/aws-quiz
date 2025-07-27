@@ -8,7 +8,7 @@ def parse_md_file(content):
     """Parse markdown file and extract questions"""
     questions = []
     
-    # Split by question numbers
+    # Split by question numbers - more precise
     question_blocks = re.split(r'\n(?=\d+\.)', content)
     
     for block in question_blocks:
@@ -27,24 +27,42 @@ def parse_md_file(content):
             
         question_text = question_match.group(1)
         
-        # Extract options
+        # Extract options and answer
         options = []
         answer_line = ""
+        in_answer_section = False
         
         for line in lines[1:]:
             line = line.strip()
-            if line.startswith('- '):
-                # Extract option
-                option_match = re.match(r'- ([A-D])\.\s*(.*)', line)
+            
+            # Check if we're in the answer section
+            if '<details' in line or 'Answer</summary>' in line:
+                in_answer_section = True
+                continue
+            elif '</details>' in line:
+                in_answer_section = False
+                continue
+            
+            # Extract options (only before answer section)
+            if not in_answer_section and line.startswith('- '):
+                # Extract option - updated regex to handle A-E
+                option_match = re.match(r'- ([A-E])\.\s*(.*)', line)
                 if option_match:
                     options.append({
                         'letter': option_match.group(1),
                         'text': option_match.group(2)
                     })
-            elif 'Correct answer:' in line:
-                answer_match = re.search(r'Correct answer:\s*([A-D])', line)
+            
+            # Extract correct answer (only in answer section)
+            elif in_answer_section and 'Correct answer:' in line:
+                # Updated regex to handle A-E and multiple answers
+                answer_match = re.search(r'Correct answer:\s*([A-E,\s]+)', line)
                 if answer_match:
-                    answer_line = answer_match.group(1)
+                    # Handle multiple answers like "A, E" or "A,B,C"
+                    answer_text = answer_match.group(1).replace(' ', '')
+                    answer_letters = [letter.strip() for letter in answer_text.split(',') if letter.strip()]
+                    # If only one answer, keep as string for backward compatibility
+                    answer_line = answer_letters[0] if len(answer_letters) == 1 else answer_letters
         
         if question_text and len(options) >= 2 and answer_line:
             questions.append({

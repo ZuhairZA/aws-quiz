@@ -59,6 +59,8 @@ def initialize_session_state():
         st.session_state.test_completed = False
     if 'user_name' not in st.session_state:
         st.session_state.user_name = ""
+    if 'result_saved' not in st.session_state:
+        st.session_state.result_saved = False
 
 def start_new_test(questions, name):
     """Start a new test"""
@@ -70,6 +72,7 @@ def start_new_test(questions, name):
     st.session_state.user_answers = {}
     st.session_state.test_completed = False
     st.session_state.user_name = name
+    st.session_state.result_saved = False
 
 def main():
     st.set_page_config(page_title="AWS Certification Quiz", layout="wide")
@@ -172,16 +175,35 @@ def main():
         
         # Question display
         st.subheader(f"Question {current_q_num + 1}")
-        st.markdown(f"**{current_question['question']}**")
-        
-        # Options
+        question_text = current_question['question']
+
+        # Check if multiple answers required
+        is_multiple = isinstance(current_question['correct_answer'], list) and len(current_question['correct_answer']) > 1
+
+        if is_multiple:
+            st.markdown(f"**{question_text}** *(Select multiple answers)*")
+            st.info("📝 This question requires multiple correct answers")
+        else:
+            st.markdown(f"**{question_text}**")
+
+        # Options - handle both single and multiple selection
         option_key = f"question_{current_q_num}"
-        selected_option = st.radio(
-            "Select your answer:",
-            options=[f"{opt['letter']}. {opt['text']}" for opt in current_question['options']],
-            key=option_key,
-            index=None
-        )
+
+        if is_multiple:
+            selected_options = []
+            for opt in current_question['options']:
+                if st.checkbox(f"{opt['letter']}. {opt['text']}", key=f"{option_key}_{opt['letter']}"):
+                    selected_options.append(opt['letter'])
+            selected_option = selected_options if selected_options else None
+        else:
+            selected_option = st.radio(
+                "Select your answer:",
+                options=[f"{opt['letter']}. {opt['text']}" for opt in current_question['options']],
+                key=option_key,
+                index=None
+            )
+            if selected_option:
+                selected_option = selected_option[0]  # Get just the letter
         
         st.markdown("---")
         
@@ -202,9 +224,11 @@ def main():
         
         with col3:
             if selected_option:
-                # Save answer
-                answer_letter = selected_option[0]  # Get the letter (A, B, C, D)
-                st.session_state.user_answers[current_q_num] = answer_letter
+                # Save answer (handle both single answer and multiple answers)
+                if isinstance(selected_option, list):
+                    st.session_state.user_answers[current_q_num] = selected_option
+                else:
+                    st.session_state.user_answers[current_q_num] = selected_option
                 
                 if current_q_num < total_questions - 1:
                     if st.button("Next ➡️", type="primary"):
@@ -228,27 +252,51 @@ def main():
             user_answer = st.session_state.user_answers.get(i, "")
             correct_answer = question['correct_answer']
             
-            if user_answer == correct_answer:
+            # Handle both single and multiple correct answers
+            if isinstance(correct_answer, list):
+                # Multiple correct answers
+                user_set = set(user_answer) if isinstance(user_answer, list) else set()
+                correct_set = set(correct_answer)
+                is_correct = user_set == correct_set
+            else:
+                # Single correct answer
+                is_correct = user_answer == correct_answer
+            
+            if is_correct:
                 correct_answers += 1
             else:
                 wrong_questions.append({
                     'question': question['question'],
                     'options': question['options'],
                     'user_answer': user_answer,
-                    'correct_answer': correct_answer
+                    'correct_answer': correct_answer,
+                    'is_multiple': isinstance(correct_answer, list)
                 })
         
         percentage = round((correct_answers / total_questions) * 100, 2)
         
-        # Save result
+        # Save result only once
         test_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        filename = save_test_result(
-            st.session_state.user_name, 
-            correct_answers, 
-            total_questions, 
-            wrong_questions, 
-            test_date
-        )
+        if not st.session_state.result_saved:
+            filename = save_test_result(
+                st.session_state.user_name, 
+                correct_answers, 
+                total_questions, 
+                wrong_questions, 
+                test_date
+            )
+            st.session_state.result_saved = True
+        
+        # Save result only once
+        if not st.session_state.result_saved:
+            filename = save_test_result(
+                st.session_state.user_name, 
+                correct_answers, 
+                total_questions, 
+                wrong_questions, 
+                test_date
+            )
+            st.session_state.result_saved = True
         
         # Display results
         st.markdown("---")
@@ -281,13 +329,30 @@ def main():
                 with st.expander(f"Question {i} - You got this wrong"):
                     st.write(f"**Q:** {wrong['question']}")
                     
-                    for opt in wrong['options']:
-                        if opt['letter'] == wrong['correct_answer']:
-                            st.success(f"✅ {opt['letter']}. {opt['text']} (Correct Answer)")
-                        elif opt['letter'] == wrong['user_answer']:
-                            st.error(f"❌ {opt['letter']}. {opt['text']} (Your Answer)")
-                        else:
-                            st.write(f"⚪ {opt['letter']}. {opt['text']}")
+                    if wrong.get('is_multiple', False):
+                        # Multiple choice question
+                        correct_answers_set = set(wrong['correct_answer'])
+                        user_answers_set = set(wrong['user_answer']) if isinstance(wrong['user_answer'], list) else set()
+                        
+                        for opt in wrong['options']:
+                            if opt['letter'] in correct_answers_set:
+                                st.success(f"✅ {opt['letter']}. {opt['text']} (Correct Answer)")
+                            elif opt['letter'] in user_answers_set:
+                                st.error(f"❌ {opt['letter']}. {opt['text']} (Your Selection)")
+                            else:
+                                st.write(f"⚪ {opt['letter']}. {opt['text']}")
+                                
+                        st.write(f"**Your answers:** {', '.join(wrong['user_answer']) if isinstance(wrong['user_answer'], list) else 'None selected'}")
+                        st.write(f"**Correct answers:** {', '.join(wrong['correct_answer'])}")
+                    else:
+                        # Single choice question
+                        for opt in wrong['options']:
+                            if opt['letter'] == wrong['correct_answer']:
+                                st.success(f"✅ {opt['letter']}. {opt['text']} (Correct Answer)")
+                            elif opt['letter'] == wrong['user_answer']:
+                                st.error(f"❌ {opt['letter']}. {opt['text']} (Your Answer)")
+                            else:
+                                st.write(f"⚪ {opt['letter']}. {opt['text']}")
         
         # Action buttons
         st.markdown("---")

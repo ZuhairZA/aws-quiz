@@ -1,0 +1,813 @@
+{
+  "name": "test2",
+  "date": "2025-07-27 23:09:25",
+  "score": 9,
+  "total": 40,
+  "percentage": 22.5,
+  "wrong_questions": [
+    {
+      "question": "Which of the following services is in the category of AWS serverless platform?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Amazon EMR."
+        },
+        {
+          "letter": "B",
+          "text": "Elastic Load Balancing."
+        },
+        {
+          "letter": "C",
+          "text": "AWS Lambda."
+        },
+        {
+          "letter": "D",
+          "text": "AWS Mobile Hub."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "The TCO gap between AWS infrastructure and traditional infrastructure has widened over the recent years. Which of the following could be the reason for that?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS helps customers invest more in capital expenditures."
+        },
+        {
+          "letter": "B",
+          "text": "AWS automates all infrastructure operations, so customers save more on human resources costs."
+        },
+        {
+          "letter": "C",
+          "text": "AWS continues to lower the cost of cloud computing for its customers."
+        },
+        {
+          "letter": "D",
+          "text": "AWS secures AWS resources at no additional charge."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "You are working on a project that involves creating thumbnails of millions of images. Consistent uptime is not an issue, and continuous processing is not required. Which EC2 buying option would be the most cost-effective?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Reserved Instances."
+        },
+        {
+          "letter": "B",
+          "text": "On-demand Instances."
+        },
+        {
+          "letter": "C",
+          "text": "Dedicated Instances."
+        },
+        {
+          "letter": "D",
+          "text": "Spot Instances."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "What is the AWS service that provides a virtual network dedicated to your AWS account?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS VPN."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Subnets."
+        },
+        {
+          "letter": "C",
+          "text": "AWS Dedicated Hosts."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon VPC."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "What is an example of agility in the AWS Cloud?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Access to multiple instance types."
+        },
+        {
+          "letter": "B",
+          "text": "Access to managed services."
+        },
+        {
+          "letter": "C",
+          "text": "Using Consolidated Billing to produce one bill."
+        },
+        {
+          "letter": "D",
+          "text": "Decreased acquisition time for new compute resources."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following services can be used to monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS WAF."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon CloudWatch."
+        },
+        {
+          "letter": "C",
+          "text": "AWS Cloud9."
+        },
+        {
+          "letter": "D",
+          "text": "AWS CloudTrail."
+        }
+      ],
+      "user_answer": "C",
+      "correct_answer": "B",
+      "is_multiple": false
+    },
+    {
+      "question": "Which AWS service would you use to obtain compliance reports and certificates?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS Artifact."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Lambda."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Inspector."
+        },
+        {
+          "letter": "D",
+          "text": "AWS Certificate Manager."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "A",
+      "is_multiple": false
+    },
+    {
+      "question": "Your company is designing a new application that will store and retrieve photos and videos. Which of the following services should you recommend as the underlying storage mechanism?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Amazon EBS."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon SQS."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Instance store."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon S3."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "App development companies move their business to AWS to reduce time-to-market and improve customer satisfaction, what are the AWS automation tools that help them deploy their applications faster? (Choose TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS CloudFormation."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Migration Hub."
+        },
+        {
+          "letter": "C",
+          "text": "AWS IAM."
+        },
+        {
+          "letter": "D",
+          "text": "AWS Elastic Beanstalk."
+        },
+        {
+          "letter": "E",
+          "text": "Amazon Macie."
+        }
+      ],
+      "user_answer": [
+        "B",
+        "C"
+      ],
+      "correct_answer": [
+        "A",
+        "D"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "Which of the following is a benefit of running an application in multiple Availability Zones?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Allows you to exceed AWS service limits."
+        },
+        {
+          "letter": "B",
+          "text": "Reduces application response time between servers and global users."
+        },
+        {
+          "letter": "C",
+          "text": "Increases available compute capacity."
+        },
+        {
+          "letter": "D",
+          "text": "Increases the availability of your application."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "Your company is designing a new application that will store and retrieve photos and videos. Which of the following services should you recommend as the underlying storage mechanism?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Amazon EBS."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon SQS."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon S3."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Instance store."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "What are the benefits of using DynamoDB? (Choose TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Automatically scales to meet required throughput capacity."
+        },
+        {
+          "letter": "B",
+          "text": "Provides resizable instances to match the current demand."
+        },
+        {
+          "letter": "C",
+          "text": "Supports both relational and non-relational data models."
+        },
+        {
+          "letter": "D",
+          "text": "Offers extremely low (single-digit millisecond) latency."
+        },
+        {
+          "letter": "E",
+          "text": "Supports the most popular NoSQL database engines such as CouchDB and MongoDB."
+        }
+      ],
+      "user_answer": [
+        "C",
+        "D"
+      ],
+      "correct_answer": [
+        "A",
+        "D"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "What are some key design principles for designing public cloud systems? (Choose TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Reserved capacity instead of on demand."
+        },
+        {
+          "letter": "B",
+          "text": "Loose coupling over tight coupling."
+        },
+        {
+          "letter": "C",
+          "text": "Servers instead of managed services."
+        },
+        {
+          "letter": "D",
+          "text": "Disposable resources instead of fixed servers."
+        },
+        {
+          "letter": "E",
+          "text": "Multi-AZ deployments instead of multi-region deployments."
+        }
+      ],
+      "user_answer": [
+        "B",
+        "C"
+      ],
+      "correct_answer": [
+        "B",
+        "D"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "Which statement best describes Elastic Load Balancing?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "It translates a domain name into an IP address using DNC."
+        },
+        {
+          "letter": "B",
+          "text": "It distributes incoming application traffic across one or more Amazon EC2 instances."
+        },
+        {
+          "letter": "C",
+          "text": "It collects metrics on connected Amazon EC2 instances."
+        },
+        {
+          "letter": "D",
+          "text": "It automatically adjusts the number of Amazon EC2 instances to support incoming traffic."
+        }
+      ],
+      "user_answer": "C",
+      "correct_answer": "B",
+      "is_multiple": false
+    },
+    {
+      "question": "A developer is planning to build a two-tier web application that has a MySQL database layer. Which of the following AWS database services would provide automated backups for the application?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A MySQL database installed on an EC2 instance."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Aurora."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon DynamoDB."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Neptune."
+        }
+      ],
+      "user_answer": "A",
+      "correct_answer": "B",
+      "is_multiple": false
+    },
+    {
+      "question": "What is the benefit of Amazon EBS volumes being automatically replicated within the same availability zone?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Elasticity."
+        },
+        {
+          "letter": "B",
+          "text": "Durability."
+        },
+        {
+          "letter": "C",
+          "text": "Traceability."
+        },
+        {
+          "letter": "D",
+          "text": "Accessibility."
+        }
+      ],
+      "user_answer": "C",
+      "correct_answer": "B",
+      "is_multiple": false
+    },
+    {
+      "question": "Both AWS and traditional IT distributors provide a wide range of virtual servers to meet their customers’ requirements. What is the name of these virtual servers in AWS?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Amazon EBS Snapshots."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon VPC."
+        },
+        {
+          "letter": "C",
+          "text": "AWS Managed Servers."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EC2 Instances."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following services gives you access to all AWS auditor-issued reports and certifications?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS Artifact."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Config."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon CloudWatch."
+        },
+        {
+          "letter": "D",
+          "text": "AWS CloudTrail."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "A",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following services enables you to easily generate and use your own encryption keys in the AWS Cloud?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS Shield."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Certificate Manager."
+        },
+        {
+          "letter": "C",
+          "text": "AWS CloudHSM."
+        },
+        {
+          "letter": "D",
+          "text": "AWS WAF."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following are pillars of the AWS Well-Architected Framework? (Select TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Multiple Availability Zones."
+        },
+        {
+          "letter": "B",
+          "text": "Performance efficiency."
+        },
+        {
+          "letter": "C",
+          "text": "Security."
+        },
+        {
+          "letter": "D",
+          "text": "Encryption usage."
+        },
+        {
+          "letter": "E",
+          "text": "High availability."
+        }
+      ],
+      "user_answer": [
+        "B",
+        "D"
+      ],
+      "correct_answer": [
+        "B",
+        "C"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "Which of the following are factors should be considered for Amazon EBS pricing? (Choose TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "The size of volumes provisioned per month."
+        },
+        {
+          "letter": "B",
+          "text": "The compute capacity you consume."
+        },
+        {
+          "letter": "C",
+          "text": "The amount of data you have stored in snapshots."
+        },
+        {
+          "letter": "D",
+          "text": "The compute time you consume."
+        },
+        {
+          "letter": "E",
+          "text": "The number of Snowball storage devices you request."
+        }
+      ],
+      "user_answer": [
+        "B",
+        "D"
+      ],
+      "correct_answer": [
+        "A",
+        "C"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "A company needs to migrate their website from on-premises to AWS. Security is a major concern for them, so they need to host their website on hardware that is NOT shared with other AWS customers. Which of the following EC2 instance options meets this requirement?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "On-demand instances."
+        },
+        {
+          "letter": "B",
+          "text": "Spot instances."
+        },
+        {
+          "letter": "C",
+          "text": "Dedicated instances."
+        },
+        {
+          "letter": "D",
+          "text": "Reserved instances."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "When architecting cloud applications, which of the following are a key design principle?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Use the largest instance possible."
+        },
+        {
+          "letter": "B",
+          "text": "Provision capacity for peak load."
+        },
+        {
+          "letter": "C",
+          "text": "Use the Scrum development process."
+        },
+        {
+          "letter": "D",
+          "text": "Implement elasticity."
+        }
+      ],
+      "user_answer": "C",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "A company is migrating a web application to AWS. The application’s compute capacity is continually utilized throughout the year. Which of the below options offers the company the most cost-effective solution?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "On-demand Instances."
+        },
+        {
+          "letter": "B",
+          "text": "Dedicated Hosts."
+        },
+        {
+          "letter": "C",
+          "text": "Spot Instances."
+        },
+        {
+          "letter": "D",
+          "text": "Reserved Instances."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "What is the AWS service that performs automated network assessments of Amazon EC2 instances to check for vulnerabilities?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Amazon Kinesis."
+        },
+        {
+          "letter": "B",
+          "text": "Security groups."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Inspector."
+        },
+        {
+          "letter": "D",
+          "text": "AWS Network Access Control Lists."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "C",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following resources can an AWS customer use to learn more about prohibited uses of the services offered by AWS?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS Service Control Policies (SCPs)."
+        },
+        {
+          "letter": "B",
+          "text": "AWS Artifact."
+        },
+        {
+          "letter": "C",
+          "text": "AWS Budgets."
+        },
+        {
+          "letter": "D",
+          "text": "AWS Acceptable Use Policy."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "D",
+      "is_multiple": false
+    },
+    {
+      "question": "Which of the following AWS services can be used to serve large amounts of online video content with the lowest possible latency? (Select TWO)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "appGateway."
+        },
+        {
+          "letter": "B",
+          "text": "Amazon S3."
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Elastic File System (EFS)."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Glacier."
+        },
+        {
+          "letter": "E",
+          "text": "Amazom CloudFront."
+        }
+      ],
+      "user_answer": [
+        "B",
+        "D"
+      ],
+      "correct_answer": [
+        "B",
+        "E"
+      ],
+      "is_multiple": true
+    },
+    {
+      "question": "Which of the following is NOT correct regarding Amazon EC2 On-demand instances?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "You have to pay a start-up fee when launching a new instance for the first time."
+        },
+        {
+          "letter": "B",
+          "text": "The on-demand instances follow the AWS pay-as-you-go pricing model."
+        },
+        {
+          "letter": "C",
+          "text": "With on-demand instances, no longer-term commitments or upfront payments are needed."
+        },
+        {
+          "letter": "D",
+          "text": "When using on-demand Linux instances, you are charged per second based on an hourly rate."
+        }
+      ],
+      "user_answer": "C",
+      "correct_answer": "A",
+      "is_multiple": false
+    },
+    {
+      "question": "What does the \"Principle of Least Privilege\" refer to?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "You should grant your users only the permissions they need when they need them and nothing more."
+        },
+        {
+          "letter": "B",
+          "text": "All IAM users should have at least the necessary permissions to access the core AWS services."
+        },
+        {
+          "letter": "C",
+          "text": "All trusted IAM users should have access to any AWS service in the respective AWS account."
+        },
+        {
+          "letter": "D",
+          "text": "IAM users should not be granted any permissions; to keep your account safe."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "A",
+      "is_multiple": false
+    },
+    {
+      "question": "AWS provides disaster recovery capability by allowing customers to deploy infrastructure into multiple [...].",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Regions."
+        },
+        {
+          "letter": "B",
+          "text": "Transportation devices."
+        },
+        {
+          "letter": "C",
+          "text": "Support plans."
+        },
+        {
+          "letter": "D",
+          "text": "Edge locations."
+        }
+      ],
+      "user_answer": "B",
+      "correct_answer": "A",
+      "is_multiple": false
+    },
+    {
+      "question": "What is the framework created by AWS Professional Services that helps organizations design a road map to successful cloud adoption?",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AWS Secrets Manager."
+        },
+        {
+          "letter": "B",
+          "text": "AWS WAF."
+        },
+        {
+          "letter": "C",
+          "text": "AWS CAF."
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EFS."
+        }
+      ],
+      "user_answer": "A",
+      "correct_answer": "C",
+      "is_multiple": false
+    }
+  ]
+}
