@@ -111,6 +111,7 @@ def main():
                 
                 # User name input
                 name = st.text_input("👤 Enter your name:", placeholder="Your name here...")
+                name = name.strip()[:50]  # Limit length and trim spaces
                 
                 if st.button("🚀 Start New Test", type="primary", disabled=not name.strip()):
                     start_new_test(questions, name.strip())
