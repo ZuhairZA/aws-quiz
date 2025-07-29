@@ -5,6 +5,12 @@ import os
 from datetime import datetime
 import pandas as pd
 
+def reset_session_state():
+    """Reset all session state variables"""
+    for key in list(st.session_state.keys()):
+        del st.session_state[key]
+    initialize_session_state()
+
 def load_questions():
     """Load questions from the database"""
     if not os.path.exists('data/questions_db.json'):
@@ -360,14 +366,12 @@ def main():
         
         with col1:
             if st.button("🚀 Take Another Test", type="primary"):
-                st.session_state.test_started = False
-                st.session_state.test_completed = False
+                reset_session_state()
                 st.rerun()
         
         with col2:
             if st.button("📊 View All Results"):
-                st.session_state.test_started = False
-                st.session_state.test_completed = False
+                reset_session_state()
                 st.rerun()
 
 if __name__ == "__main__":
